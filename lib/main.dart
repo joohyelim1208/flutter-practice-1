@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_1/title_row.dart';
 
 void main() {
   runApp(MyApp());
@@ -61,10 +62,12 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          // 제목행. 여기서 작업을 하고 파일로 별도로 뺄 수 있다!
+          TitleRow(title: "New Allbum"),
+          // TODO 큰앨범들어가는 로우
           // 제목행
-          // 큰앨범들어가는 로우
-          // 제목행
-          // 작은앨범들어가는 로우
+          TitleRow(title: "Song List"),
+          // TODO 작은앨범들어가는 로우
         ],
       ),
     );
