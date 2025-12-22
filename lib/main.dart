@@ -80,11 +80,13 @@ class HomePage extends StatelessWidget {
                 title: 'aaa',
                 artist: 'sss',
               ),
+              SizedBox(width: 10),
               BigAlbum(
                 imageUrl: 'https://picsum.photos/id/2/200/200',
                 title: 'bbb',
                 artist: 'hhh',
               ),
+              SizedBox(width: 10),
               BigAlbum(
                 imageUrl: 'https://picsum.photos/id/1000/200/200',
                 title: 'ccc',
@@ -102,11 +104,13 @@ class HomePage extends StatelessWidget {
             title: 'www',
             artist: 'ooo',
           ),
+          SizedBox(height: 10),
           MiniAlbum(
             imageUrl: 'https://picsum.photos/id/999/200/200',
             title: 'yyy',
             artist: 'rrr',
           ),
+          SizedBox(height: 10),
           MiniAlbum(
             imageUrl: 'https://picsum.photos/id/456/200/200',
             title: 'ppp',
