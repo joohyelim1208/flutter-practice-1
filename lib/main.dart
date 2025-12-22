@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_1/big_album.dart';
+import 'package:flutter_practice_1/mini_album.dart';
 import 'package:flutter_practice_1/rounded_image.dart';
 import 'package:flutter_practice_1/title_row.dart';
 
@@ -85,14 +86,34 @@ class HomePage extends StatelessWidget {
                 artist: 'hhh',
               ),
               BigAlbum(
-                imageUrl: 'https://picsum.photos/id/3000/200/200',
+                imageUrl: 'https://picsum.photos/id/1000/200/200',
                 title: 'ccc',
                 artist: 'lll',
               ),
             ],
           ),
           TitleRow(title: "Song List"),
-          // TODO 작은앨범들어가는 로우
+
+          // 작은앨범들어가는 로우
+          // row위젯으로 만들어줘야 함 MiniAlbum
+          // 미니앨범도 완료됐으면 파일로 빼주기!
+          MiniAlbum(
+            imageUrl: 'https://picsum.photos/id/777/200/200',
+            title: 'www',
+            artist: 'ooo',
+          ),
+          MiniAlbum(
+            imageUrl: 'https://picsum.photos/id/999/200/200',
+            title: 'yyy',
+            artist: 'rrr',
+          ),
+          MiniAlbum(
+            imageUrl: 'https://picsum.photos/id/456/200/200',
+            title: 'ppp',
+            artist: 'qqq',
+          ),
+
+          Icon(Icons.more_horiz),
         ],
       ),
     );
