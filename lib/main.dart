@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_1/big_album.dart';
+import 'package:flutter_practice_1/rounded_image.dart';
 import 'package:flutter_practice_1/title_row.dart';
+
+// 1. 일단 Scaffold 안에서 작업
+// 2. 완성되면 위젯클래스로 분리
+// 3. 위젯클래스를 별도의 파일로 분리
+// 4. Scaffold에 위젯 배치
+// 5. 변경되어야 하는 부분들 속성으로 정의해서 수정!
 
 void main() {
   runApp(MyApp());
@@ -53,19 +61,36 @@ class HomePage extends StatelessWidget {
             // 반드시 넣어줘야 한다.
             // 가로크기 / 세로크기
             aspectRatio: 2.5 / 1,
-            child: ClipRRect(
-              // 셀렉트 위젯 해서 AspectRatio
-              borderRadius: BorderRadius.circular(20), // 숫자는 반지름 값이다.
-              child: Image.network(
-                'https://picsum.photos/300/200',
-                fit: BoxFit.cover,
-              ),
-            ),
+            // clipRract가 너무 길어져서 위젯으로 만들어줌!RoundedImage(),
+            // 새로운 클래스가 만들어짐
+            child: RoundedImage(imageUrl: 'https://picsum.photos/300/200'),
           ),
           // 제목행. 여기서 작업을 하고 파일로 별도로 뺄 수 있다!
           TitleRow(title: "New Allbum"),
-          // TODO 큰앨범들어가는 로우
+          // 큰앨범들어가는 로우
           // 제목행
+          Row(
+            children: [
+              //Column을 crossAxisAlignment 왼쪽으로 시작시킬 때
+              // Column을 BigAlbum(),으로 위젯을 만들어줌.
+              // id/1 각 다른 이미지 출력. 뒤에 숫자만 맘에든 이미지로 써주면 됨.
+              BigAlbum(
+                imageUrl: 'https://picsum.photos/id/1/200/200',
+                title: 'aaa',
+                artist: 'sss',
+              ),
+              BigAlbum(
+                imageUrl: 'https://picsum.photos/id/2/200/200',
+                title: 'bbb',
+                artist: 'hhh',
+              ),
+              BigAlbum(
+                imageUrl: 'https://picsum.photos/id/3000/200/200',
+                title: 'ccc',
+                artist: 'lll',
+              ),
+            ],
+          ),
           TitleRow(title: "Song List"),
           // TODO 작은앨범들어가는 로우
         ],
