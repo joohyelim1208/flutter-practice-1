@@ -1,16 +1,49 @@
-# flutter_practice_1
+/// - ListView
+///     - ClipRRect : 자녀위젯 그냥 잘라줌
+///         - Image
+///     - Row (제목행 이라고 부르자!)(TODO 간격 구현하면서 고민!)
+///         - Text
+///         - Text
+///     - Row
+///         - Column (큰앨범 이라고 부르자!)
+///             - ClipRRect
+///                 - Image
+///             - Text
+///             - Text
+///         - 큰앨범
+///         - 큰앨범
+///     - 제목행
+///     - Row (작은앨범 이라고 부르자!)
+///         - ClipRRect
+///             - Image
+///         - Column
+///             - Text
+///             - Text
+///         - Icon
+///     - 작은앨범
+///     - 작은앨범
 
-A new Flutter project.
+import 'package:flutter/material.dart';
 
-## Getting Started
+// stsateful widget을 배워보자
+// 깃 브랜치로 이전 파일들 push 하고 새로 시작
+void main() {
+  runApp(MyApp());
+}
 
-This project is a starting point for a Flutter application.
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      //
+    );
+  }
+}
 
-A few resources to get you started if this is your first Flutter project:
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(Object context) {
+    return Scaffold();
+  }
+}
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
