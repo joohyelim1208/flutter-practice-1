@@ -13,6 +13,8 @@ class PlusOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // 1-1)컨테이너를 위젯으로 감싸줌 버튼만들기
+    // 8-1) GestureDetector 위젯으로 만들고 파일로 빼줌!
     return GestureDetector(
       onTap: () {
         // 11) 함수타입을 실행하려면 ()붙여줌. 함수를 전달해서 실행한 것.
