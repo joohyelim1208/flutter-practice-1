@@ -60,44 +60,39 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     print("위젯 그리기 시작");
 
-    List<Widget> listViewChildren = [];
-    // Listview의 children속성에 들어갈 리스트 만들기
-    // 반복문 이용해서 postList내에 있는 모든 요소 위젯으로 만들기
-
-    for (var index = 0; index < postList.length; index++) {
-      // children속성에 들어갈 리스트에 추가해주기
-      Post p = postList[index];
-      Widget item = Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(),
-        ),
-        //간격 띄워주기
-        padding: EdgeInsets.all(20),
-        child: Column(
-          // 내용 좌측정렬
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("포스트 아이디 : ${p.id}"),
-            Text("사용자 아이디 : ${p.userId}"),
-            Text("제목 : ${p.title}"),
-            Text("내용 : ${p.body}"),
-          ],
-        ),
-      );
-      listViewChildren.add(item);
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Text('블로그 샘플'),
         //
       ),
-      body: ListView(
+      body: ListView.builder(
         padding: EdgeInsets.all(20),
+        itemCount: postList.length,
+
         // 안에 칠드런 속성들 다 지워주고
-        // 100개가 출력된다!
-        children: listViewChildren,
+        // 100개가 출력된다! 컨테이너 대신에 itemExtentBuilder써줌. 리스트뷰.빌더라는 네임드 생성자로 바꿔서 사용
+        // 아이템 빌더 속성에서 반환하는 위젯 보여주는 네임드 생성자!
+        itemBuilder: (context, index) {
+          Post p = postList[index];
+          Widget item = Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(),
+            ),
+            //간격 띄워주기
+            padding: EdgeInsets.all(20),
+            child: Column(
+              // 내용 좌측정렬
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("포스트 아이디 : ${p.id}"),
+                Text("사용자 아이디 : ${p.userId}"),
+                Text("제목 : ${p.title}"),
+                Text("내용 : ${p.body}"),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
