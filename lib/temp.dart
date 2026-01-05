@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice_1/weather.dart';
 
 class Temp extends StatelessWidget {
-  const Temp({super.key, required this.displayTemp});
+  const Temp({
+    super.key,
+    required this.displayTemp,
+    required Weather weather,
+    required this.weather,
+  });
 
   final Weather weather;
 
