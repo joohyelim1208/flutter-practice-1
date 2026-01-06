@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_1/refresh_button.dart';
 import 'package:flutter_practice_1/speed.dart';
 import 'package:flutter_practice_1/temp.dart';
 import 'package:flutter_practice_1/weather.dart';
 import 'package:http/http.dart';
 
+// UI역할만 하는 홈페이지
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,9 +20,11 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Temp(),
+            Speed(),
             // if (weather != null) Temp(weather: weather!),
             // if (weather != null) Speed(weather: weather!),
-            // IconButton(onPressed: () {}, icon: Icon(Icons.refresh)),
+            RefreshButton(),
           ],
         ),
       ),

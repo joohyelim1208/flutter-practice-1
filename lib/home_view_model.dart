@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 
 // 1. 홈페이지에 보여지는 상태 변수들 담는 클래스
+// 리버팟을 사용하는 패키지에 대한 내용임. 외울 필요 까지?
+// 더 간단하게도 사용 가능하다.
 
 class HomeState {
   Weather? weather;
@@ -35,6 +37,7 @@ class HomeViewModel extends Notifier<HomeState> {
     Map<String, dynamic> jsonMap = jsonDecode(r.body);
     // 4. Map을 객체로 변경 (3~4 : 역직렬화). weather.dart파일에 있는 것들 가져옴
     Weather w = Weather.fromJson(jsonMap);
+    state = HomeState(weather: w);
   }
 }
 
@@ -44,7 +47,10 @@ class HomeViewModel extends Notifier<HomeState> {
 // 객체를 HomePage에서 직접 생성하면 여전히 자녀위젯에 생성자를 통해 전달 해줘야하는 불편함 존재
 // 객체를 직접 생성하지 않고 공급해주는 NotifierProvider 사용! -> 의존성 주입
 // NotifierProvider는 공급해줄 객체 (뷰모델)의 타입과 상태클래스 타입을 제너릭으로 명시 해줘야 함
-final HomeViewModelProvider = NotifierProvider<HomeViewModel, HomeState>(() {
+//
+// homeViewModelProvider 객체를 1번만 생성하기 위해서 사용!
+// 싱글톤패턴 -> 객체를 한번만 생성 -> 이거를 쉽게 할 수 있는게 NotifierPrivider
+final homeViewModelProvider = NotifierProvider<HomeViewModel, HomeState>(() {
   print("홈뷰모델 생성됨");
   return HomeViewModel();
 });
