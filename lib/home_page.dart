@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice_1/speed.dart';
 import 'package:flutter_practice_1/temp.dart';
 import 'package:flutter_practice_1/weather.dart';
+import 'package:http/http.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +18,9 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (weather != null) Temp(weather: weather!),
-            if (weather != null) Speed(weather: weather!),
-            IconButton(icon: Icon(Icons.refresh)),
+            // if (weather != null) Temp(weather: weather!),
+            // if (weather != null) Speed(weather: weather!),
+            // IconButton(onPressed: () {}, icon: Icon(Icons.refresh)),
           ],
         ),
       ),
