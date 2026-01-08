@@ -1,16 +1,20 @@
-# flutter_practice_1
+# Riverpod
 
-A new Flutter project.
+- 용도: 상태 관리
 
-## Getting Started
+## 사용법
+- 상태 클래스 만들기
+- 뷰모델 만들기
+- 뷰모델 관리자 만들기
 
-This project is a starting point for a Flutter application.
+## 이전 버전과 변동사항
+- 이전 버전에서는 뷰모델의 종류가 다양
+  - Notifier : 기본 뷰모델. 한번 사용되면 앱이 종료될 때 까지 유지
+  - AutoDisposeNotifier : 한번 사용되고 더 이상 사용되지 않을 때 메모리에서 제거
+  - FamilyNotifier : Notifier와 동일하나 인자(아규먼트)를 받을 때 사용.
+  - AutoDisposeNotifier : AutoDisposeNotifier + FamilyNotifier 의 결합체
+  - ...
+  다 일일히 클래스를 구성해야 됐다.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Notifier 클래스가 너무 많다.
+- Notifier 하나만 쓰는 것으로 바뀜!
