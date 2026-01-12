@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice_1/home_view_model.dart';
 import 'package:flutter_practice_1/model/weather.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod/src/framework.dart';
 
 // ConsumerWidget 이란?
 class Temp extends ConsumerWidget {

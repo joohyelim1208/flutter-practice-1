@@ -1,31 +1,29 @@
-https://api.open-meteo.com/v1/forecast?latitude=37.57&longitude=126.98&current_weather=true
 
-```json
-{
-  "latitude": 37.55,
-  "longitude": 127,
-  "generationtime_ms": 0.0547170639038086,
-  "utc_offset_seconds": 0,
-  "timezone": "GMT",
-  "timezone_abbreviation": "GMT",
-  "elevation": 37,
-  "current_weather_units": {
-    "time": "iso8601",
-    "interval": "seconds",
-    "temperature": "°C",
-    "windspeed": "km/h",
-    "winddirection": "°",
-    "is_day": "",
-    "weathercode": "wmo code"
-  },
-  "current_weather": {
-    "time": "2025-12-31T00:00",
-    "interval": 900,
-    "temperature": -8.9,
-    "windspeed": 7.9,
-    "winddirection": 313,
-    "is_day": 1,
-    "weathercode": 0
-  }
-}
+# Freezed 사용법
+
+ 1. 패키지 추가
+```sh
+flutter pub add \
+  dev:build_runner \
+  freezed_annotation \
+  dev:freezed
+# if using freezed to generate fromJson/toJson, also add:
+flutter pub add json_annotation dev:json_serializable
 ```
+
+2. 클래스 작성 (freezed 문법대로)
+
+3. 코드생성
+```sh
+dart run build_runner watch -d
+```
+
+4. `.gitignore`에 생성된 파일 안 올라가게 추가하기!
+제일 하단에
+```
+*.freezed.dart
+*.g.dart
+```s
+코드 같이 안 올라가게 해주기! 너무 길다
+이 파일들은 git에 올리지 않는다.
+`*`s
