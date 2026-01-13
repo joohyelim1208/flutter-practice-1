@@ -1,16 +1,6 @@
-# flutter_practice_1
+해야 될 것들! 
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+파이어스토어에 있는 맛집을 가지고 와서 -> 홈페이지에 보여주기
+언제 가지고 와야될까? -> 사용자 입장에서 홈페이지가 보일 때 가져와야 함
+-> 홈페이지가 보일 때 함수가 실행되어야 함
+-> 위젯이 단 한번만 실행해야 될 때 여러가지 방법. (스테이트풀위젯, 등)
